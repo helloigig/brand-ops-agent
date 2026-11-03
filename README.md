@@ -55,8 +55,9 @@ prompts/
   weekly-status.md    optional
 scripts/
   README.md           what brief.mjs, send.mjs and rows.mjs must do
-  brief.example.mjs   read-only snapshot from Stripe, stock and your email provider
-  rows.example.mjs    turns the snapshot plus extras into the page's rows
+  brief.mjs           read-only snapshot from Stripe, stock and your email provider
+  send.mjs            sends the outreach emails marked ready
+  rows.mjs            turns the snapshot plus extras into the page's rows
 data/
   config.example.json your brands, rules and places, referenced by the prompts
   scoreboard.schema.json

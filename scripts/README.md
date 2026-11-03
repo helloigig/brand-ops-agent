@@ -1,6 +1,8 @@
 # Scripts
 
-Three small Node scripts that the daily agent runs on the machine that holds your keys. The agent never sees the keys; it only runs the scripts and reads their output. Implement them against your own stack; the interfaces are what matter.
+Three small Node scripts that the daily agent runs on the machine that holds your keys. The agent never sees the keys; it only runs the scripts and reads their output. The versions here are written against Stripe, an optional admin API on your own site (stock, pending reviews) and Resend; swap the fetch calls if your stack differs and keep the interfaces.
+
+Keys come only from the environment: `STRIPE_SECRET_KEY`, `RESEND_API_KEY`, and `ADMIN_SECRET` (or whatever a brand's `stock_auth_env` names). Brand names, domains, sender addresses and endpoints come from `data/config.json` (set `BRAND_OPS_CONFIG` to use another path); see the brand fields in `data/config.example.json`.
 
 ## brief.mjs — read-only snapshot
 
