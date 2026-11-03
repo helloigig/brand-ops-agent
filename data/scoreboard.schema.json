@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "scoreboard row",
+  "type": "object",
+  "required": ["date", "brand", "orders", "revenue", "checkouts", "paid_checkouts", "ad_cost"],
+  "properties": {
+    "date": { "type": "string", "format": "date" },
+    "brand": { "type": "string" },
+    "orders": { "type": "integer" },
+    "orders_regional": { "type": "integer", "description": "orders in a region tracked separately, optional" },
+    "revenue": { "type": "number" },
+    "aov": { "type": "number" },
+    "checkouts": { "type": "integer" },
+    "paid_checkouts": { "type": "integer" },
+    "abandoned_value": { "type": "number" },
+    "abandoned_shipping": { "type": "number" },
+    "ad_cost": { "type": "number" },
+    "ad_clicks": { "type": "integer" },
+    "ad_conversions": { "type": "integer" }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "geo-history row",
+  "type": "object",
+  "required": ["key", "week", "brand", "engine", "prompt", "position"],
+  "properties": {
+    "key": { "type": "string", "description": "week|brand|engine|prompt" },
+    "week": { "type": "string", "format": "date" },
+    "brand": { "type": "string" },
+    "engine": { "type": "string", "enum": ["chatgpt", "perplexity", "google"] },
+    "prompt": { "type": "string" },
+    "position": { "type": "integer", "description": "1 = first brand named, 0 = not named" },
+    "top_brands": { "type": "array", "items": { "type": "string" }, "maxItems": 3 },
+    "cited": { "type": "array", "items": { "type": "string" } },
+    "top10": { "type": "boolean" },
+    "carousel": { "type": "boolean" }
+  }
+}

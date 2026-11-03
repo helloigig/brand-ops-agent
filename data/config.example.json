@@ -1,0 +1,91 @@
+{
+  "owner": {
+    "name": "Your name",
+    "language": "en",
+    "timezone": "Europe/London",
+    "goal": "100 orders a day across all brands",
+    "milestones": [10, 30, 100]
+  },
+  "brands": {
+    "brand_a": {
+      "name": "Brand A",
+      "domain": "branda.example",
+      "key": "brand_a",
+      "markets": ["UK", "EU", "US", "rest of world"],
+      "products": [
+        { "name": "Hero product", "price": "£120", "note": "ships from 25 Oct" },
+        { "name": "Second product", "price": "£95" }
+      ],
+      "delivery": "Free delivery everywhere from £120",
+      "promos": [
+        { "code": "NEWIN15", "what": "15% off new arrivals", "until": "2026-11-19" },
+        { "code": "BLACKFRIDAY20", "what": "20% off everything", "from": "2026-11-20", "until": "2026-11-30", "must_exist_in_stripe_by": "2026-11-20" }
+      ],
+      "christmas_last_order": { "UK": "2026-12-17", "EU": "2026-12-07", "US": "2026-12-09", "AU": "2026-12-16" },
+      "returns_window": "Orders 1 Nov–24 Dec returnable until 15 Jan",
+      "reviews": "pending until the owner publishes them in /admin/reviews",
+      "instagram": "@branda",
+      "email_sender": "hello@branda.example",
+      "inbox": "the mailbox hello@branda.example forwards to",
+      "founder_byline": "Your name, founder of Brand A",
+      "press": ["Publication 1", "Publication 2"],
+      "copy_rules": [
+        "the bags are water-resistant, framed positively, never waterproof",
+        "never compare to or name luxury houses"
+      ],
+      "creator_conflicts": ["brands with a current paid deal in the same category"],
+      "regional": {
+        "AU": {
+          "products": "a subset only, shipped from local stock",
+          "pages": ["/au", "/au/products/<slug>"],
+          "season": "summer from October, peak January",
+          "never_mention": ["products not sold there"]
+        }
+      },
+      "repo": "you/branda-site",
+      "repo_notes": ["docs/guide-page-map.md", "docs/seo-plan.md"],
+      "build_check": "scripts/check-seo.mts must pass"
+    },
+    "brand_b": {
+      "name": "Brand B",
+      "domain": "brandb.example",
+      "key": "brand_b",
+      "products": [{ "name": "Seven styles", "price": "£84", "note": "one size, made in the UK; only style 008 ships next day, others 14 days" }],
+      "delivery": "Free UK and EU, £15 elsewhere",
+      "gifts": { "held": 20, "note": "never promise more than are left" },
+      "instagram": "@brandb",
+      "email_sender": "the Gmail account used for outreach",
+      "copy_rules": ["after a rename, old name never appears in customer-facing copy"],
+      "creator_conflicts": ["a current paid deal with another brand in the category"],
+      "repo": "you/brandb-site",
+      "articles": "src/lib/journal/articles/*.ts registered in src/lib/journal/index.ts"
+    }
+  },
+  "places": {
+    "scripts_dir": "$HOME/brand-ops",
+    "env_file": "../site/.env.local",
+    "page": "URL of the Morning Brief page the agent writes to",
+    "roster": "URL of the Seeding Roster the agent reads and updates",
+    "ads": "ads.google.com, read-only"
+  },
+  "geo_questions": {
+    "brand_a_uk": ["best <category> brand", "<category> UK", "<attribute> <category>"],
+    "brand_a_global": ["best <category> 2026", "<material> vs <material>, which is better"],
+    "brand_a_au": ["best <category> australia"],
+    "brand_b": ["best <category> for women", "<category> gift for girlfriend UK"]
+  },
+  "message_rules": {
+    "daily_message_only_if": [
+      "a dispute needs a response within 3 days",
+      "a creator or editor said yes",
+      "a shop wants samples or to stock",
+      "the gift quota is about to run out",
+      "emails failed to send",
+      "a step was blocked by a sign-in or the machine being unreachable",
+      "a copycat or trademark problem",
+      "a Christmas last-order date is 2 days away",
+      "the 7-day average reached a new milestone"
+    ],
+    "weekly_message_max_lines": 6
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "extras — the daily agent's working memory",
+  "type": "object",
+  "properties": {
+    "gifts": { "type": "object", "properties": { "held": { "type": "integer" }, "used": { "type": "integer" } } },
+    "outreach": { "type": "array", "items": { "type": "object", "properties": { "brand": {}, "drafts": {}, "ready": {}, "sent": {}, "replied": {}, "yes": {} } } },
+    "todo": { "type": "array", "items": { "type": "object", "required": ["key", "kind", "label"], "properties": { "key": { "type": "string", "description": "stable, so the same issue isn't added twice" }, "kind": { "type": "string", "enum": ["decide", "deadline"] }, "brand": { "type": "string" }, "label": { "type": "string" }, "text": { "type": "string" }, "due": { "type": "string", "format": "date" } } } },
+    "instagram": { "type": "array", "items": { "type": "object", "properties": { "brand": {}, "who": {}, "note": {}, "link": {}, "at": {} } } },
+    "email": { "type": "array", "items": { "type": "object", "properties": { "brand": {}, "from": {}, "subject": {}, "note": {}, "at": {} } } },
+    "mentions": { "type": "array", "items": { "type": "object", "properties": { "brand": {}, "source": {}, "note": {}, "link": {}, "at": {} } } },
+    "words": { "type": "array", "items": { "type": "object", "properties": { "brand": {}, "term": {}, "note": {}, "link": {} } } }
+  }
+}
